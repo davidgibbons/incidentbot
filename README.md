@@ -66,7 +66,7 @@ This repository's CI workflow owns VEVO image publishing. After lint and tests p
 
 The tag is `harbor.vevomgmt.com/vevo/incidentbot:incidentbot-<upstream-version>-vevo.<workflow-run-number>`. Update `UPSTREAM_VERSION` in `.github/workflows/ci.yml` when upgrading the fork's upstream release. CI verifies that release tag is an ancestor of the source being built. `APP_VERSION` is baked into the image as `<upstream-version>-vevo.<workflow-run-number>`.
 
-Publishing requires access to the internal shared action and the existing private-repository Harbor org secrets. The current public fork cannot use either; repository access must be resolved before enabling the build. The shared action also needs the optional `build_args` addition from [github-tools PR #123](https://github.com/VEVO/github-tools/pull/123).
+Publishing runs from the internal VEVO working repository and uses the existing `HARBOR_USERNAME` and `HARBOR_PASSWORD` organization secrets. The personal public fork remains available for upstream contributions.
 
 After publication, pin the exact image reference from the CI summary in the infrastructure chart and deploy through Argo CD. Publishing does not sync the workload.
 
