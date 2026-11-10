@@ -2,7 +2,7 @@
 App version — derived automatically, never set by hand.
 
 Resolution order:
-  1. APP_VERSION env var  — baked in by the Docker build (format: YYYY.MM.DD-<sha>)
+  1. APP_VERSION env var  — baked in by the Docker build (VEVO builds: <upstream-version>-vevo.<build-number>)
   2. `git describe`       — useful during local development
   3. "dev"                — fallback when neither is available
 """

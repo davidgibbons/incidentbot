@@ -220,7 +220,7 @@ logs: ## Tail bot logs
 # ---------------------------------------------------------------------------
 
 # Image name for local builds — override to push to your own registry.
-# In CI, images are pushed to ghcr.io/<org>/incidentbot automatically.
+# VEVO CI publishes upstream-versioned rebuilds to harbor.vevomgmt.com/vevo/incidentbot.
 IMAGE_NAME ?= incidentbot
 IMAGE_TAG  ?= $(shell git describe --tags --always --dirty 2>/dev/null || echo dev)
 
